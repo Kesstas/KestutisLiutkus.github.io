@@ -1474,3 +1474,15 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+
+/* Projektai: didinimo ikona kampe, kad neuždengtų aprašymo */
+.portfolio .portfolio-content .portfolio-info .preview-link {
+  left: auto;
+  right: 15px;
+  top: 12px;
+}
+
+.portfolio .portfolio-content .portfolio-info p {
+  font-size: 14px;
+  padding: 0 15px;
+}
