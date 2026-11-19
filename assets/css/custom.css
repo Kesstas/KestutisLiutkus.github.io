@@ -348,6 +348,140 @@ p {
   border-radius: 12px;
 }
 
+/* ---------- 5. Komponentas: įgūdžių progreso juostos ---------- */
+
+/* Juostos fonas: storesnis, suapvalintas, su plona kraštine */
+.skills .progress-bar-wrap {
+  height: 12px;
+  border-radius: 50px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  overflow: hidden;
+}
+
+/* Užpildas: žalias perėjimas ir švytėjimas */
+.skills .progress-bar {
+  height: 100%;
+  border-radius: 50px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent-color), #000000 35%), var(--accent-color));
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent-color), transparent 40%);
+}
+
+/* Įgūdžio pavadinimas be didžiųjų raidžių, procentai žali */
+.skills .progress .skill {
+  text-transform: none;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.skills .progress .skill .val {
+  color: var(--accent-color);
+}
+
+/* ---------- 5. Komponentas: navigacijos juosta ---------- */
+
+/* Paslinkus žemyn juosta tampa permatoma su suliejimu ir plona žalia linija apačioje.
+   Suliejimas dedamas į atskirą ::before sluoksnį, nes ant pačios juostos jis
+   „įkalintų" telefono meniu juostos ribose. */
+.scrolled .header {
+  --background-color: rgba(10, 10, 10, 0.7);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.scrolled .header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Telefono / siauro ekrano meniu: tos pačios piliulės */
+@media (max-width: 1199px) {
+  .navmenu ul {
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    border-radius: 10px;
+    margin: 2px 0;
+  }
+
+  .navmenu a:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 88%);
+  }
+
+  .navmenu .active,
+  .navmenu .active:focus {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-color), transparent 50%);
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Meniu punktai kaip „piliulės" vietoj šablono pabraukimo */
+  .navmenu > ul > li {
+    padding: 10px 4px;
+  }
+
+  .navmenu > ul > li > a {
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 500;
+  }
+
+  .navmenu > ul > li > a:before {
+    display: none;
+  }
+
+  .navmenu li:hover > a {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 88%);
+  }
+
+  .navmenu .active,
+  .navmenu .active:focus {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-color), transparent 50%);
+  }
+}
+
+/* ---------- Projektų filtrai su pabraukimu ---------- */
+
+.portfolio .portfolio-filters li {
+  position: relative;
+  margin: 0 16px;
+  padding-bottom: 8px;
+}
+
+/* Linija išsiplečia iš vidurio užvedus pelę, aktyviam filtrui lieka visada */
+.portfolio .portfolio-filters li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.portfolio .portfolio-filters li:hover::after,
+.portfolio .portfolio-filters li.filter-active::after {
+  left: 0;
+  width: 100%;
+}
+
+/* ---------- 6. Kontrastas ---------- */
+
+/* Projektų kortelių pavadinimas: juodas tekstas ant žalio (baltas ant žalio sunkiai skaitėsi) */
+.portfolio .portfolio-content .portfolio-info h4 {
+  color: var(--contrast-color);
+  font-weight: 600;
+}
+
 /* Projektai: didinimo ikona kampe, kad neuždengtų aprašymo */
 .portfolio .portfolio-content .portfolio-info .preview-link {
   left: auto;
