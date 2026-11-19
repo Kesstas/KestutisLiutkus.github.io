@@ -1474,26 +1474,3 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
-
-/* Projektai: didinimo ikona kampe, kad neuždengtų aprašymo */
-.portfolio .portfolio-content .portfolio-info .preview-link {
-  left: auto;
-  right: 15px;
-  top: 12px;
-}
-
-.portfolio .portfolio-content .portfolio-info p {
-  font-size: 14px;
-  padding: 0 15px;
-}
-
-/* Paslaugos: kainoraščio lentelė tokios pat spalvos kaip paslaugų kortelės */
-#pricing .table {
-  --bs-table-bg: var(--surface-color);
-  --bs-table-striped-bg: color-mix(in srgb, var(--surface-color), #ffffff 5%);
-  --bs-table-border-color: color-mix(in srgb, var(--default-color), transparent 85%);
-}
-
-#pricing .table thead th {
-  border-bottom: 2px solid var(--accent-color);
-}

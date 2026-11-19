@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Montserrat:ital,wght@1,900&display=swap');
+
+/* =========================================
+   CV svetainės stiliai
+   ========================================= */
+   
+
+/* ---------- Šriftai (Typography) ---------- */
+
+/* Šriftų šeimos: perrašomi šablono kintamieji (buvo Roboto, Raleway, Poppins) */
+:root {
+  --default-font: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --heading-font: "Space Grotesk", sans-serif;
+  --nav-font: "Space Grotesk", sans-serif;
+}
+
+body {
+  line-height: 1.7;
+}
+
+/* Antraštės */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h5 {
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h6 {
+  font-weight: 500;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+/* Logotipui atskiras Montserrat šriftas, nes jis turi 900 storį ir tikrą pasvirimą */
+.header .logo h1.sitename {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Pastraipos */
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  font-weight: 300;
+  color: color-mix(in srgb, var(--default-color), transparent 12%);
+}
+
+/* ---------- Mygtukai ---------- */
+
+.btn-cv,
+.contact .php-email-form button[type=submit] {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Užvedus pelę: mygtukas pakyla ir pradeda švytėti */
+.btn-cv:hover,
+.contact .php-email-form button[type=submit]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 55%);
+  background-color: color-mix(in srgb, var(--accent-color), #ffffff 15%);
+  color: var(--contrast-color);
+}
+
+/* Paspaudus: mygtukas „įsispaudžia" */
+.btn-cv:active,
+.contact .php-email-form button[type=submit]:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent-color), transparent 70%);
+  background-color: color-mix(in srgb, var(--accent-color), #000000 15%);
+}
+
+/* Antrinis (kontūrinis) mygtukas */
+.btn-cv-outline {
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.btn-cv-outline:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0 10px;
+}
+
+/* ---------- Nuorodos tekste ---------- */
+
+.main section p a,
+.main section li a {
+  color: var(--accent-color);
+  font-weight: 500;
+  background-image: linear-gradient(var(--accent-color), var(--accent-color));
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+  transition: background-size 0.3s ease, color 0.3s ease;
+}
+
+/* Užvedus pelę pabraukimas išsiplečia per visą nuorodą */
+.main section p a:hover,
+.main section li a:hover {
+  color: #ffffff;
+  background-size: 100% 2px;
+}
+
+/* ---------- Kontrastas: pagrindinio puslapio nuotrauka ---------- */
+
+/* Tamsus perėjimas ant nuotraukos, kad tekstas ir mygtukai neliestų su fonu */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+/* ---------- Išdėstymas: Apie ---------- */
+
+/* Daugiau vietos sekcijos viršuje ir apačioje (šablone 60px) */
+.about.section {
+  padding: 90px 0;
+}
+
+/* Nuotrauka: suapvalinti kampai, žalia kraštinė, žalias švytėjimas kaip mygtukų */
+.about img {
+  border-radius: 16px;
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 30%);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 55%);
+}
+
+/* Didesnis tarpas tarp nuotraukos ir teksto */
+@media (min-width: 992px) {
+  .about .content {
+    padding-left: 40px;
+  }
+}
+
+.about .content h2 {
+  margin-bottom: 10px;
+}
+
+/* Įvadinis sakinys kaip citata su žalia linija kairėje */
+.about .content .fst-italic {
+  border-left: 3px solid var(--accent-color);
+  padding: 5px 0 5px 20px !important;
+  margin: 20px 0 30px;
+}
+
+/* Duomenų sąrašas atskiroje kortelėje */
+.about .content .row {
+  margin: 0;
+  padding: 25px 15px 10px;
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.about .content ul li {
+  margin-bottom: 15px;
+}
+
+/* ---------- Išdėstymas: Patirtis ---------- */
+
+.resume.section {
+  padding: 90px 0;
+}
+
+/* Skyrių antraštės (Santrauka, Išsilavinimas...) su didesniu tarpu viršuje */
+.resume .resume-title {
+  margin-top: 45px;
+  margin-bottom: 25px;
+}
+
+.resume .col-lg-6 > .resume-title:first-child {
+  margin-top: 0;
+}
+
+/* Kiekvienas įrašas kaip atskira kortelė vietoj laiko juostos */
+.resume .resume-item,
+.resume .resume-item.pb-0 {
+  margin: 0 0 20px 0;
+  padding: 22px 25px !important;
+  background-color: var(--surface-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume .resume-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Paslepiamas šablono laiko juostos taškas */
+.resume .resume-item::before {
+  display: none;
+}
+
+/* Pavadinimas be didžiųjų raidžių, ryškesnis */
+.resume .resume-item h4 {
+  text-transform: none;
+  line-height: 1.3;
+  color: var(--heading-color);
+  margin-bottom: 12px;
+}
+
+/* Datos kaip žalias ženkliukas */
+.resume .resume-item h5 {
+  padding: 4px 14px;
+  border-radius: 50px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  color: var(--accent-color);
+  margin-bottom: 12px;
+}
+
+/* Sąrašai su tomis pačiomis rodyklėmis kaip Apie skiltyje (per ::before) */
+.resume .resume-item ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume .resume-item ul li {
+  position: relative;
+  padding: 0 0 6px 24px;
+}
+
+.resume .resume-item ul li::before {
+  content: "\f285";
+  font-family: "bootstrap-icons";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 14px;
+  color: var(--accent-color);
+}
+
+/* ---------- Išdėstymas: Projektai ---------- */
+
+.portfolio.section {
+  padding: 90px 0;
+}
+
+/* Daugiau vietos tarp filtrų ir grafikų (šablone 20px) */
+.portfolio .portfolio-filters {
+  margin-bottom: 45px;
+}
+
+/* Didesni tarpai tarp kortelių (šablone 1.5rem) */
+.portfolio .isotope-container {
+  --bs-gutter-x: 2.5rem;
+  --bs-gutter-y: 2.5rem;
+}
+
+/* Grafikų kortelės: suapvalinti kampai, plona kraštinė ir šešėlis */
+.portfolio .portfolio-content {
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Užvedus pelę: žalia kraštinė ir toks pat švytėjimas kaip mygtukų */
+.portfolio .portfolio-content:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 55%);
+}
+
+/* ---------- Išdėstymas: Paslaugų kortelės ---------- */
+
+.services .service-item {
+  padding: 50px 25px;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* Užvedus pelę kortelė nebenusidažo žaliai (žalias pavadinimas ant žalio fono dingdavo),
+   o pakyla ir gauna žalią kraštinę su švytėjimu */
+.services .service-item:hover {
+  background: var(--surface-color);
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 55%);
+}
+
+/* Užvedus pelę tekstas lieka tos pačios spalvos (šablonas jį nudažydavo juodai) */
+.services .service-item:hover h3 {
+  color: var(--accent-color);
+}
+
+.services .service-item:hover p {
+  color: color-mix(in srgb, var(--default-color), transparent 12%);
+}
+
+.services .service-item:hover .icon {
+  background: var(--accent-color);
+}
+
+.services .service-item:hover .icon i {
+  color: var(--contrast-color);
+}
+
+.services .service-item:hover .icon::before {
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+/* Ikonos su labiau suapvalintais kampais */
+.services .service-item .icon,
+.services .service-item .icon::before {
+  border-radius: 12px;
+}
+
+/* Projektai: didinimo ikona kampe, kad neuždengtų aprašymo */
+.portfolio .portfolio-content .portfolio-info .preview-link {
+  left: auto;
+  right: 15px;
+  top: 12px;
+}
+
+.portfolio .portfolio-content .portfolio-info p {
+  font-size: 14px;
+  padding: 0 15px;
+}
+
+/* Paslaugos: kainoraščio lentelė tokios pat spalvos kaip paslaugų kortelės */
+#pricing .table {
+  --bs-table-bg: var(--surface-color);
+  --bs-table-striped-bg: color-mix(in srgb, var(--surface-color), #ffffff 5%);
+  --bs-table-border-color: color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+#pricing .table thead th {
+  border-bottom: 2px solid var(--accent-color);
+}
