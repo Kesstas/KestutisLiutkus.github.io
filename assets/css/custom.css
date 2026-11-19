@@ -427,7 +427,9 @@ p {
     padding: 10px 4px;
   }
 
-  .navmenu > ul > li > a {
+  /* :focus būtinas, nes šablono .navmenu a:focus kitaip sumažina piliulę paspaudus */
+  .navmenu > ul > li > a,
+  .navmenu > ul > li > a:focus {
     padding: 8px 16px;
     border-radius: 50px;
     font-weight: 500;
