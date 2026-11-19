@@ -484,6 +484,155 @@ p {
   font-weight: 600;
 }
 
+/* ---------- Papildoma: Paslaugų sąrašai ---------- */
+
+/* Nenumeruotas sąrašas: vietoj taškų žalios rodyklės (::before), kaip Apie ir Patirtyje */
+#process ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#process ul > li {
+  position: relative;
+  padding: 6px 0 6px 28px;
+}
+
+#process ul > li::before {
+  content: "\f285";
+  font-family: "bootstrap-icons";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  font-size: 14px;
+  color: var(--accent-color);
+}
+
+/* Vienodas žalias švytėjimas visoms sąrašų rodyklėms: Apie, Patirtis, Paslaugos */
+.about .content ul i,
+.resume .resume-item ul li::before,
+#process ul > li::before {
+  text-shadow: 0 0 4px var(--accent-color), 0 0 12px var(--accent-color), 0 0 20px color-mix(in srgb, var(--accent-color), transparent 40%);
+}
+
+/* Įdėtinis sąrašas: atitrauktas, su vertikalia linija, tuščiaviduriais apskritimais ir blankesniu tekstu */
+#process ul ul {
+  margin: 8px 0 4px 6px;
+  padding-left: 18px;
+  border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+#process ul ul > li {
+  padding: 4px 0 4px 22px;
+  font-size: 0.92rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+#process ul ul > li::before {
+  content: "";
+  left: 2px;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  text-shadow: none;
+  box-shadow: 0 0 6px var(--accent-color), 0 0 14px color-mix(in srgb, var(--accent-color), transparent 40%);
+}
+
+/* Numeruotas sąrašas: skaičiai per CSS skaitiklį, žaliuose apskritimuose */
+#process ol {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: etapas;
+}
+
+#process ol > li {
+  position: relative;
+  counter-increment: etapas;
+  padding: 8px 0 8px 48px;
+  margin-bottom: 8px;
+}
+
+#process ol > li::before {
+  content: counter(etapas);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  box-shadow: 0 0 5px color-mix(in srgb, var(--accent-color), transparent 20%), 0 0 12px color-mix(in srgb, var(--accent-color), transparent 55%);
+  font-family: var(--heading-font);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Vertikali linija, jungianti etapus */
+#process ol > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: calc(50% + 17px);
+  height: calc(100% - 26px);
+  width: 2px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+/* ---------- Papildoma: kainoraščio lentelė ---------- */
+
+/* Lentelė su suapvalintais kampais ir šešėliu */
+#pricing .table-responsive {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+#pricing .table {
+  margin-bottom: 0;
+}
+
+/* c) Vienodi vidiniai tarpai ir turinys centre */
+#pricing .table th,
+#pricing .table td {
+  padding: 16px 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* a) Antraštinė eilutė: žalias fonas, juodas tekstas, didžiosios raidės */
+#pricing .table thead th {
+  --bs-table-bg: var(--accent-color);
+  --bs-table-color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+  border-color: var(--accent-color);
+}
+
+/* Kainos stulpelis paryškintas */
+#pricing .table tbody td:last-child {
+  color: var(--accent-color);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* b) Zebra (iš table-striped) + eilutės paryškinimas užvedus pelę */
+#pricing .table tbody tr > * {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#pricing .table tbody tr:hover > * {
+  --bs-table-bg-state: color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
 /* Projektai: didinimo ikona kampe, kad neuždengtų aprašymo */
 .portfolio .portfolio-content .portfolio-info .preview-link {
   left: auto;
