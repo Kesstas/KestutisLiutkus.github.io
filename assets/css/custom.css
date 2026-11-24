@@ -348,7 +348,6 @@ p {
   border-radius: 12px;
 }
 
-/* ---------- 5. Komponentas: įgūdžių progreso juostos ---------- */
 
 /* Juostos fonas: storesnis, suapvalintas, su plona kraštine */
 .skills .progress-bar-wrap {
@@ -378,11 +377,7 @@ p {
   color: var(--accent-color);
 }
 
-/* ---------- 5. Komponentas: navigacijos juosta ---------- */
 
-/* Paslinkus žemyn juosta tampa permatoma su suliejimu ir plona žalia linija apačioje.
-   Suliejimas dedamas į atskirą ::before sluoksnį, nes ant pačios juostos jis
-   „įkalintų" telefono meniu juostos ribose. */
 .scrolled .header {
   --background-color: rgba(10, 10, 10, 0.7);
   border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
@@ -476,7 +471,7 @@ p {
   width: 100%;
 }
 
-/* ---------- 6. Kontrastas ---------- */
+
 
 /* Projektų kortelių pavadinimas: juodas tekstas ant žalio (baltas ant žalio sunkiai skaitėsi) */
 .portfolio .portfolio-content .portfolio-info h4 {
@@ -484,7 +479,6 @@ p {
   font-weight: 600;
 }
 
-/* ---------- Papildoma: Paslaugų sąrašai ---------- */
 
 /* Nenumeruotas sąrašas: vietoj taškų žalios rodyklės (::before), kaip Apie ir Patirtyje */
 #process ul {
@@ -583,7 +577,6 @@ p {
   background-color: color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
-/* ---------- Papildoma: kainoraščio lentelė ---------- */
 
 /* Lentelė su suapvalintais kampais ir šešėliu */
 #pricing .table-responsive {
